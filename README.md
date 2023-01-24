@@ -1,4 +1,4 @@
-# <img src="icon.png" width="40"> Google Form Email Validator
+# <img src="icon.png" width="40"> Google Forms Email Validator
 Chrome extension that alerts users when they mistype emails in a Google Form by validating the email address’ deliverability using AbstractAPI’s Email Validation API
 
 ## Architecture 
