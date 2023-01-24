@@ -1,0 +1,26 @@
+{
+
+    "manifest_version": 3,
+    "name": "Google Forms Email Validator",
+    "version": "1.0.0",
+    "author": "Aishwarya Gavili",
+
+    "description": "Alert users on if they mistype email in a Google Form by validating email deliverability, using AbstractAPI's Email Validation API.",
+
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+
+    "action": {
+        "default_icon": "icon.png",
+        "default_title": "Google Forms Email Validator",
+        "default_popup": "index.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["*://docs.google.com/forms/d/e/*/viewform*"],
+        "js": ["script.js"]
+    }]
+
+}
