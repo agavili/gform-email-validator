@@ -51,27 +51,31 @@ async function ValidateEmailResponse() {
     //Add Button to Page
     form_bottom.appendChild(validateButton);
     
-    // Validation Logic 
-    validateButton.addEventListener("click", function() {
+    //Obtain Email Address
     const email_element = document.querySelector('input[type="email"]');
-    email = email_element.value; 
-        const res = fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${YOUR_UNIQUE_API_KEY}&email=${email}`)
-        .then(function (response) {
-            console.log(response.clone().json())
-            return response.json();
-        }).then(function (data) {
-            var deliverability = data.deliverability;
-            if(deliverability != 'DELIVERABLE'){
-                alert("The email you've entered is unreachable, please re-enter it 🙏");
-            }else{
-                validateButton.innerHTML = "Entries are Valid 🙌";
-                validateButton.style.backgroundColor = '#137E06';
-                fadein(validateButton);
-            }
-        }).catch(function (err) {
-            console.warn('Something went wrong.', err);
+    
+    // Validation Logic 
+    if(email_element != null){
+        validateButton.addEventListener("click", function() {
+            email = email_element.value; 
+            const res = fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=${YOUR_UNIQUE_API_KEY}&email=${email}`)
+            .then(function (response) {
+                console.log(response.clone().json())
+                return response.json();
+            }).then(function (data) {
+                var deliverability = data.deliverability;
+                if(deliverability != 'DELIVERABLE'){
+                    alert("The email you've entered is unreachable, please re-enter it 🙏");
+                }else{
+                    validateButton.innerHTML = "Entries are Valid 🙌";
+                    validateButton.style.backgroundColor = '#137E06';
+                    fadein(validateButton);
+                }
+            }).catch(function (err) {
+                console.warn('Something went wrong.', err);
+            });
         });
-    });
+}
 
 }
 
