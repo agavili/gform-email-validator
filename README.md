@@ -23,5 +23,5 @@ Google Forms only allows email format validation and doesn't check whether users
 
 
 ## Notes
-Extension is still in the process of getting added to the Chrome Webstore.
+Extension is available in the Chrome Webstore <a href="https://chrome.google.com/webstore/detail/forms-email-validator/hhaboidikmipofcpabmfkiaiahbkeaff?hl=en&authuser=0" target="_blank">HERE</a>
 
